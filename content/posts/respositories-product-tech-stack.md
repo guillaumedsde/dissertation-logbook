@@ -21,9 +21,11 @@ In terms of scope, what I imagine is a platform where the document is uploaded t
 ## Tech stack
 
 ### Backend
+
 I understand that extracting features and sensitivites from the texts to redact will be done with python, as such, and considering my knowledge in the language, the backend probably ought the be written with it. This will probably consist in writing an API that will be consumed by a frontend. There are multiple frameworks, for this, in the past I have used Flask, which is a *barebones* approach, that is, lots of hand coding. I might look into other python API frameworks...
 
 ### Datastore
+
 As I said above, from what I understand about the final product, storing documents might be out of scope. As such, the datastore we would potentially need is one to store the trained model for text feature extraction, but not for storing documents themselves.
 
 ### Frontend
