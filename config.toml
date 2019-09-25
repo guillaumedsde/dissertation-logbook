@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://dissertation.guillaume.desusanne.com/"
 languageCode = "en-us"
 title = "Dissertation logbook"
 theme = "beyond-nothing"
