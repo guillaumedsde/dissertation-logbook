@@ -4,8 +4,6 @@ date: 2019-09-24T17:18:09+01:00
 draft: false
 ---
 
-# Repositories Product and Tech stack
-
 ## Repositories
 
 I have created a [gitlab group](https://gitlab.com/visualising-sensitivity-classification-features) for all project related to my level 4 dissertation. GitLab will be useful for automation through its CI/CD pipelines. I have setup a [repository](https://gitlab.com/visualising-sensitivity-classification-features/logbook) for this statically generated site in order to autobuild and publish its version controlled source.

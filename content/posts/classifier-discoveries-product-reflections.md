@@ -1,10 +1,8 @@
 ---
-title: "Classifier Discoveries Product Reflections"
+title: "Classifier discoveries, NLP frameworks and reflections on product"
 date: 2019-10-01T11:14:09+01:00
 draft: false
 ---
-
-# Classifier discoveries, NLP frameworks and reflections on product
 
 ## Classifier "improvements"?
 

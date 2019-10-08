@@ -1,10 +1,8 @@
 ---
-title: "First Classifier Predictions Scikit"
+title: "First Predictions using scikit classifier"
 date: 2019-09-25T17:02:39+01:00
 draft: false
 ---
-
-# First Predictions using scikit classifier
 
 Following the scikit tutorial below I have managed to build my first Machine Learning (ML) Pipeline. Using the [20 Newsgroup dataset](http://qwone.com/~jason/20Newsgroups/) built into scitkit, I have trained multiple models using the following classifiers:
 

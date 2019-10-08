@@ -1,10 +1,8 @@
 ---
-title: "Classifier Predictions Trust"
+title: "Classifier Predictions and Trust"
 date: 2019-09-25T10:26:54+01:00
 draft: false
 ---
-
-# Classfifier Predictions and Trust
 
 [_Ribeiro et al., 2016_](http://arxiv.org/abs/1602.04938)
 
