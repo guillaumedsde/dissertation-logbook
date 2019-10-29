@@ -14,8 +14,8 @@ Since the scope of our application is focused on textual redactions (we are work
 
 - Redact once
 - Redact in document
-- Redact in document Set
-- Remove Redaction
+- Redact in document set
+- Remove redaction
 
 A tooltip style "popup" menu with these options fading in like what is done on the Ghost CMS or on Medium would be an elegant way to display possible interactions on the text selection:
 
@@ -63,3 +63,30 @@ In summary, the final editing interface would display the text to be redacted wi
 {{% figure src="/wireframing/menu-wireframe.png" caption="Hamburger Menu wireframe" %}}
 
 {{% figure src="/wireframing/tooltip-wireframe-cropped.jpg" caption="Text highlight Tooltip wireframe" %}}
+
+## Edits
+
+_23/10/2019_
+
+Now having given this more thought, the idea of a hamburger menu is not great. Having to click twice to access any feature in the menu is not a good UX. Rather, having a sidebar with icons and keeping a hamburger menu that expands the sidebar to also show text next to the icons is a better idea because it keeps the functions accessible while not cluttering too much space. This works better than a top menu like Google Docs' because we can still expand the menu to get more information about the icons as opposed to having to wait for an information tooltip to appear.
+
+Furthermore, a couple more actions on a redaction came to my mind while I was exploring possibilities, so now we could have:
+
+- Redact once
+- Redact in document
+- Redact in document set
+- Remove this redaction
+- Remove redaction in document
+- Remove redaction in document set
+
+And for an entire document:
+- Go back to document set
+- _seperator_
+- undo
+- redo
+- _seperator_
+- Download redacted document
+- Download unredacted document
+- (Save functionality?)
+- _seperator_
+- Delete document from set
