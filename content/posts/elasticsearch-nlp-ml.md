@@ -41,3 +41,8 @@ By using ElasticSearch's NLP and ML tools (again "just" Lucene in the background
 > Why then use Elasticsearch when there are other tools?
 >
 > Because your data is already there and it's going to pre-compute the underlying statistics anyway. It's almost like you get some NLP for free!
+
+## Resources
+
+- [ML in production with ElasticSearch](https://www.elastic.co/blog/sizing-machine-learning-with-elasticsearch)
+- [Getting started with ElasticSearch NLP and ML](https://dataconomy.com/tag/use-elasticsearch-nlp-text-mining/)
