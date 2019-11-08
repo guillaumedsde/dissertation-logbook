@@ -1,7 +1,7 @@
 ---
 title: "ElasticSearch built in Natural Language Processing and Machine Learning"
 date: 2019-11-06T09:45:32Z
-draft: true
+draft: false
 ---
 
 While studying [ElasticSearch](https://www.elastic.co/products/elasticsearch), I stumbled upon a [blog post](https://www.elastic.co/blog/text-classification-made-easy-with-elasticsearch) detailing how ElasticSearch can perform Natural Language Processing (NLP) and Machine Learning (ML) classification out of the box, processing documents while _indexing_ them. While experimenting exposing [Scikit Learn](https://scikit-learn.org/) predictions over a Flask API, I stumbled upon a problem: it is **slow**. Indeed, classifying a document and calculating an explanation for that classification is long and computationally expensive. Doing it while indexing the document allows us to only do it once and store the results, this is especially convenient since the document does not change.
