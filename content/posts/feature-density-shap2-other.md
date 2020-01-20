@@ -14,11 +14,24 @@ If feature explanation proves a valid indication of nearby sensitive section, I 
 
 ## Shap, Second Attempt
 
+I've explored around for more resources on the Shap framework for interpreting Machine Learning models and have found some useful resources for understanding how it works.
+
+{{< youtube wjd1G5bu_TY >}}
+
+> This is a simplified overview of the research from which Shap emerged
+
+{{< youtube id="ngOBhhINWb8?start=712" autoplay="false">}}
+
+> And this is a more in depth talk, I've set the video to start at the demo, but I suggest watching all of it
+
 My previous attempts at implementing the SHAP explainer were not successful, I have detailed the issues I stumbled upon in previous posts. The official [README for Shap](https://github.com/slundberg/shap) uses the [XGBoost classifier](https://xgboost.readthedocs.io/en/latest/index.html), without knowing much about the details of how it works, I decided to try using it instead of the SVM classifier I used before in the hope of getting Shap to work. And it seemed to work, Shapley values were calculated without any problem using the `TreeExplainer` built in Shap on the XGBoost trained model.
 
 I sorted them by absolute value to get the top n features with the biggest Shapley values (the ones that contribute most to or against the prediction) and matched them with their textual values. I modified the API and implemented the changes in the ReactJS frontend only to end up with less explaining features than I had asked for.
 
-It seems like some of the to Shap values were those of features that were _not_ in the text I was trying to classify, perhaps my method actually only provides for a global model interpretation as opposed to a local prediction interpretation? But then, why are the top shapley values different for each document given the same model? I might need to look further into the code for the Shap package's [force plot of feature contribution](https://github.com/slundberg/shap/blob/master/shap/plots/force.py) and how it calculates the importance of each feature. Indeed it seems like it normalizes Shapley values according to the "[base value](https://github.com/slundberg/shap/blob/52eeee48b3cb6754bd993d16e77dddc25f1292a3/shap/plots/force.py#L39)" but I am not sure what this base value actually is.
+It seems like some of the to Shap values were those of features that were _not_ in the text I was trying to classify, perhaps my method actually only provides for a global model interpretation as opposed to a local prediction interpretation? But then, why are the top shapley values different for each document given the same model?
+A possible explanation might be that the Shap values also underline the importance of the fact that a feature is missing from the text, which would explain why I am getting Shap values for features _not_ in the text.
+I might need to look further into the code for the Shap package's [force plot of feature contribution](https://github.com/slundberg/shap/blob/master/shap/plots/force.py) and how it calculates the importance of each feature.
+Indeed it seems like it normalizes Shapley values according to the "[base value](https://github.com/slundberg/shap/blob/52eeee48b3cb6754bd993d16e77dddc25f1292a3/shap/plots/force.py#L39)" but I am not sure what this base value actually is.
 
 > This is the reference value that the feature contributions start from. For SHAP values it should be the value of explainer.expected_value.
 
@@ -41,3 +54,5 @@ I have spent quite some time implementing fixes and tweaks to the code I rushed 
 - improve population script performance
 - centralized all documentation in one URL: [harpocrates-app.gitlab.io/harpocrates](https://harpocrates-app.gitlab.io/harpocrates/)
 - other code cleanup and optimizations
+
+<!-- https://youtu.be/ngOBhhINWb8?t=712 -->
