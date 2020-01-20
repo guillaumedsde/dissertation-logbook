@@ -28,9 +28,9 @@ I have spent some time trying to get the upload of an entire document set at onc
 
 _(right click -> view image for bigger image)_
 
-{{% figure src="/ui-improvements/doc_set_creation.gif" caption="Document Set and Document Creation" %}}
+{{< figure src="/ui-improvements/doc_set_creation.gif" caption="Document Set and Document Creation" >}}
 
-{{% figure src="/ui-improvements/document_edit.gif" caption="Document sensitivity visualisation toggle and early redaction menu" %}}
+{{< figure src="/ui-improvements/document_edit.gif" caption="Document sensitivity visualisation toggle and early redaction menu" >}}
 
 ## What then?
 

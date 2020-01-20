@@ -12,11 +12,11 @@ First, I've converted the weights, representing features that contribute to sens
 
 Secondly, I am currently using a "two class" Lime explainer:
 
-{{% figure src="/december-update/twoclass.png" caption="Two class Lime explainer" %}}
+{{< figure src="/december-update/twoclass.png" caption="Two class Lime explainer" >}}
 
 An interesting visualization on the
 
-{{% figure src="/december-update/twoclass.png" caption="Two class Lime explainer" %}}
+{{< figure src="/december-update/twoclass.png" caption="Two class Lime explainer" >}}
 
 I have also done various layout tweaks, notably displaying the current "path" i.e. the collection and the document set, a quick dark/light theme, a homepage, I've removed the empty side drawer and I've enlarged the main content container to avoid large margins on each side.
 
@@ -24,6 +24,6 @@ I have also done various layout tweaks, notably displaying the current "path" i.
 
 _(right click -> view image for bigger image)_
 
-{{% figure src="/december-update/home-file-upload.gif" caption="Homepage and document upload" %}}
+{{< figure src="/december-update/home-file-upload.gif" caption="Homepage and document upload" >}}
 
-{{% figure src="/december-update/redacting.gif" caption="Document view with classification, explanations and redactions" %}}
+{{< figure src="/december-update/redacting.gif" caption="Document view with classification, explanations and redactions" >}}

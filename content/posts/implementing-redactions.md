@@ -31,7 +31,7 @@ With these changes, I have quite painlessly refactored my backend API to use Mon
 
 I have implemented the backend for storing JSON objects representing sensitive sections fairly easily, However, I am struggling to get the frontend working.
 
-{{% figure src="/redacting/buggy_redaction.gif" caption="Current (buggy) implementation of redactions" %}}
+{{< figure src="/redacting/buggy_redaction.gif" caption="Current (buggy) implementation of redactions" >}}
 
 I will try to explain my problem concisely. I am using [Mozilla's react-content-marker](https://github.com/mozilla/react-content-marker) library for highlighting text, notably with a black highlighter for redactions. This library works by placing `<mark>` HTML elements around a Regex match. I have written Regex to match character offsets in the text (in order to have a "range of redacted characters"). However, the library works by adding these tags one after the other, so the offsets given are relative to the previous tag (as can be seen in the animation above). This solution does not feel very "reliable", I'm unaware of a "best practice alternative"...
 

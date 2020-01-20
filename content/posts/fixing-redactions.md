@@ -12,4 +12,4 @@ My next attempt was using [Facebook's DraftJS](https://github.com/facebook/draft
 
 My next step which is where I currently stand is using a ReactJS library for text annotation (designed for ML classification from what I can tell), it is called [react-annotate](https://www.npmjs.com/package/react-text-annotate). Here is where I stand:
 
-{{% figure src="/redacting/buggy2_redactions.gif" caption="Document sensitivity redactions wth annotation" %}}
+{{< figure src="/redacting/buggy2_redactions.gif" caption="Document sensitivity redactions wth annotation" >}}
