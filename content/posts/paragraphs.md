@@ -51,3 +51,20 @@ parameters = {
     "clf__cache_size": [100],
 }
 ```
+
+After close to five hours, the GridSearch on my particular dataset given the parameter space defined above returned the following optimal parameters:
+
+```
+clf__cache_size: 100
+clf__decision_function_shape: 'ovo'
+clf__kernel: 'linear'
+clf__random_state: 1984
+vect__analyzer: 'word'
+vect__lowercase: True
+vect__norm: 'l1'
+vect__smooth_idf: True
+vect__stop_words: 'english'
+vect__strip_accents: 'unicode'
+vect__sublinear_tf: True
+vect__use_idf: True
+```
