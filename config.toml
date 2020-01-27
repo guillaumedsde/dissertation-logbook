@@ -3,25 +3,43 @@ languageCode = "en-us"
 title = "Dissertation logbook"
 theme = "beyond-nothing"
 
-
 [privacy]
-  [privacy.disqus]
-    disable = true
-  [privacy.googleAnalytics]
-    anonymizeIP = true
-    disable = true
-    respectDoNotTrack = true
-    useSessionStorage = true
-  [privacy.instagram]
-    disable = true
-    simple = true
-  [privacy.twitter]
-    disable = false
-    enableDNT = true
-    simple = true
-  [privacy.vimeo]
-    disable = false
-    simple = true
-  [privacy.youtube]
-    disable = false
-    privacyEnhanced = true
+
+[privacy.disqus]
+disable = true
+
+[privacy.googleAnalytics]
+anonymizeIP = true
+disable = true
+respectDoNotTrack = true
+useSessionStorage = true
+
+[privacy.instagram]
+disable = true
+simple = true
+
+[privacy.twitter]
+disable = false
+enableDNT = true
+simple = true
+
+[privacy.vimeo]
+disable = false
+simple = true
+
+[privacy.youtube]
+disable = false
+privacyEnhanced = true
+
+[markup]
+
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+style = "arduino"
+tabWidth = 4
