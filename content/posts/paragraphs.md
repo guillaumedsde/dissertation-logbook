@@ -1,7 +1,7 @@
 ---
 title: "Paragraphs and GridSearch"
 date: 2020-01-22T13:34:16Z
-draft: true
+draft: false
 ---
 
 Let's try and classify documents at a paragraph level to see if the extra level of granularity is
