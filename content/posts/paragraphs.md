@@ -8,28 +8,28 @@ Let's try and classify documents at a paragraph level to see if the extra level 
 
 ## What is a Paragraph?
 
-When trying to formally define problems, one can end up questioning event the seemingly most obvious seemingly established truths. This time, I set out to answer: what is a paragraph? Take this nonsensical document for example:
+When trying to formally define problems, one can end up questioning event the seemingly most obvious seemingly established truths. This time, I set out to answer: what is a paragraph? I have tried to develop a regular expression for "a paragraph" and ended up with this expression for matching a paragraph delimiter: `(?=\n\s*\n)` with this (simplified here) code:
 
-```
-Date: 04/05/1997
+```python
+import re
 
-Something about Star Wars
+text = "..."
 
-I am writing something about Star Wars.
-I am doing this because I need an example paragraph, the content itself does not matter, I just need text to explain my point and Lorem Lipsums are a bit "overused"
-
-Now This is a second paragraph.
-I need it to differentiate it from the second paragraph so I am yet again writing another paragraph.
-
+r = re.compile(r"(?=\n\s*\n)")
+paragraphs = r.split(text)
 ```
 
-The first approach of "a paragraph is surround by double line returns" brings up more questions: is `Date: 04/05/1997` a paragraph? is `Something about Star Wars`?
+The only issue is that some "paragraphs" consist of only the match for the delimiter. My non-optimal solution to this is to then iterate over paragraphs to append those consisting only of whitespaces to the previous one, it is probably possible to write regex to avoid this but I have not figured out how.
 
-<!-- TODO develop on this -->
+## Classifying a document with arbitrary granularity
 
-## Classifying at document and paragraph level
+Classifying at a paragraph level did not yield very satisfactory levels of "document overview", most paragraphs have very similar classifications making it hard/meaningless to differentiate between them. My model could potentially be an issue, so I've tried to tweak it (see GridSearch below) but I need to look into it more.
 
-Going back t
+So I tried classifiying each line within a document which yielded what seems like more interesting information with some lines clearly being classified as more sensitive than others. To what extent this is true: I do not know, I need word level gold standard annotations for the document in order to be able to determine that.
+
+Furthermore, currently, my implementation displays line or paragraph sensitivity using a "progress bar" component I developed using Material UI ReactJS framework. For now it is the only visualization I could come up with, it works, but I am not completely satisfied with it. Especially with line level classifications, it is a bit verbose and hard to read.
+
+Lastly, implementing this word and paragraph level classifications broke the document wide feature highlighting as well as the redaction functionality. I have started to "generalize" the code to allow me to split the text at an arbitrary level of granularity (even no split, i.e. document level granularity) and retain these features.
 
 ## GridSearch
 
