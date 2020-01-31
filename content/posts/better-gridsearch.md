@@ -17,3 +17,11 @@ So I need to do a couple of things:
 - select which metrics to use
 - export these metrics
 - visualize them
+
+To do this I'm going to need to understand a bit more about the classifiers I am going to use in order to defined a relevant parameter space and avoid exploring uneeded avenues
+
+## Support Vectors
+
+{{< youtube _PwhiWxHK8o >}}
+
+Value of 1 of
