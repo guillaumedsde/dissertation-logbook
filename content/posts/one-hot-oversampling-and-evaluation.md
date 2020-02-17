@@ -46,3 +46,5 @@ I am also going to need a document set for testers to review, in this case, a fe
 There are a few bugs that might hinder a user evaluation, I have spent some time fixing them and am almost done. Similarly there are some features which might be useful for a user study that are not currently implemented such as a "next document" button, ordering of document sets by sensitive documents, ordering documents by sensitivity ...
 
 Another important issue is getting "users" (i.e. reviewers) to conduct the user study. In any case I need someone who is either familiar with the sensitive document review process, or someone knowledgeable enough in a domain area to be able to review a document for sensitivity, ideally: both. This is going to be hard to find and finding incentives for participation is also going to be hard.
+
+I have started a handout for the user evaluation as [HTML](https://harpocrates-app.gitlab.io/notech/user_evaluation.md.html) or [PDF](https://harpocrates-app.gitlab.io/notech/user_evaluation.md.pdf) (this is an incomplete document I will continue updating it)
