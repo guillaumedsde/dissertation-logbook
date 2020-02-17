@@ -1,7 +1,7 @@
 ---
-title: "One Hot encoding and resampling"
+title: "One Hot encoding resampling and user evaluation"
 date: 2020-02-15T13:18:43Z
-draft: true
+draft: false
 ---
 
 ## Resampling
@@ -35,7 +35,7 @@ I need to start evaluating my application to evaluate how it performs and which 
 
 There are multiple ways to evaluate this:
 
-- questionnaire with Likert scale
+- questionnaire with Likert scale question on each feature
 - time review process with/without feature
   - time consuming since have to review more documents
 - mouse position/click data
