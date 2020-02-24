@@ -48,7 +48,7 @@ texts = pool.map(func=read_file, iterable=file_paths)
 pool.close()
 ```
 
-I will re run a GridSearch with this fix and will combine a number of resampling techniques, with Stratified K-folds and I will pass a `joblib.Memory` object to my Pipeline to [cache vectorized data](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to avoid having to re-run the vectorizer and speed things up.
+I will re run a GridSearch with this fix and will combine a number of resampling techniques with Stratified K-folds. I also tried passing a `joblib.Memory` object to my Pipeline to [cache vectorized data](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to avoid having to re-run the vectorizer and speed things up but I experienced poor performance and did not have time to elaborate and ran the grid search without.
 
 ## Selecting documents
 
@@ -59,3 +59,7 @@ I will also try to select documents in order to form a collection that does not 
 ## Order of documents
 
 The documents in my collection share certain acronyms and words, hence, the reviewer subjects will probably spend some time on the first document trying to research and understand some of them, so they will probably spend more time on the fist document. To alleviate that, I need to either take it into account or give an introduction on a held out document and give some background information about the collection. A question I thought about: **how much detail can I give reviewers about the collection**. I could also forgo presenting details about the collection **If I could get sample redacted sensitive sections to explain the redaction process**.
+
+## Questionnaire
+
+I will also give a [short questionnaire](https://docs.google.com/forms/d/1ZpeUlWykRoVqsDzYZ2s45o4u08EXxLr44hlthCFYwWk) (please don't fill out unless you have used Harpocrates) to fill out after using the application. It has questions about specific components in the interface as well as more general questions about the experience of using Harpocrates.
