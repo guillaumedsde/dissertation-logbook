@@ -14,6 +14,42 @@ For the purpose of conducting the user study, I have added a `TEST_MODE` environ
 
 This should allow me to display different user interfaces to different users and evaluate the effectiveness of my Machine Learning aids to the sensitivity review process.
 
+Furthermore I've enabled sensitive explanations to be displayed by default, I am also considering showing only half the maximum explanations by default to see how reviewers modify it (increasing or decreasing it).
+
+## Fixing the classifier
+
+In my previous attempts, I have tried to address the problem of imbalance in my dataset (many more insensitive than sensitive documents) with Stratified K-fold Cross Validation (which only replicates the "same" imbalance over K folds) as well as various [resampling strategies](https://dissertation.guillaume.desusanne.com/posts/one-hot-oversampling-and-evaluation/) which have not yielded good results.
+
+I have managed to fix this, here is a sample from the buggy document parsing code:
+
+```python
+pool = Pool(processes=PROCESSES)
+for file_path in file_paths:
+    pool.apply_async(
+        func=read_file,
+        args=(file_path,),
+        callback=texts.append,
+        error_callback=logging.exception,
+    )
+texts = pool.map(func=read_file, iterable=file_paths)
+pool.close()
+pool.join()
+```
+
+critically, I use `pool.apply_async` to schedule file reads to the process pool. However, as stated by the [documentation](https://docs.python.org/3.8/library/multiprocessing.html#multiprocessing.pool.Pool.apply_async)
+
+> If callback is specified then it should be a callable which accepts a single argument. When the result becomes ready callback is applied to it, that is unless the call failed, in which case the error_callback is applied instead.
+
+Thus, `texts.append` is called for a text whenever it is done being parsed, thus appending text to the `text` list in arbitrary order. The fix is to use the slower `pool.map` method which preserves the ordering:
+
+```python
+pool = Pool(processes=PROCESSES)
+texts = pool.map(func=read_file, iterable=file_paths)
+pool.close()
+```
+
+I will re run a GridSearch with this fix and will combine a number of resampling techniques, with Stratified K-folds and I will pass a `joblib.Memory` object to my Pipeline to [cache vectorized data](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to avoid having to re-run the vectorizer and speed things up.
+
 ## Selecting documents
 
 I will be selecting a handful of documents from my data set with a couple of criteria. First I will try to find relatively short documents in so that the user study does not take too long and to simplify the process of sensitivity identification for test subjects which will not be expert reviewers.
