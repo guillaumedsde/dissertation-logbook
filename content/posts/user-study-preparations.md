@@ -23,6 +23,7 @@ In my previous attempts, I have tried to address the problem of imbalance in my 
 I have managed to fix this, here is a sample from the buggy document parsing code:
 
 ```python
+texts=[]
 pool = Pool(processes=PROCESSES)
 for file_path in file_paths:
     pool.apply_async(
@@ -31,7 +32,6 @@ for file_path in file_paths:
         callback=texts.append,
         error_callback=logging.exception,
     )
-texts = pool.map(func=read_file, iterable=file_paths)
 pool.close()
 pool.join()
 ```
@@ -43,6 +43,7 @@ critically, I use `pool.apply_async` to schedule file reads to the process pool.
 Thus, `texts.append` is called for a text whenever it is done being parsed, thus appending text to the `text` list in arbitrary order. The fix is to use the slower `pool.map` method which preserves the ordering:
 
 ```python
+texts=[]
 pool = Pool(processes=PROCESSES)
 texts = pool.map(func=read_file, iterable=file_paths)
 pool.close()
