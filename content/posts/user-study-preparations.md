@@ -54,7 +54,20 @@ I will re run a GridSearch with this fix and will combine a number of resampling
 
 I will be selecting a handful of documents from my data set with a couple of criteria. First I will try to find relatively short documents in so that the user study does not take too long and to simplify the process of sensitivity identification for test subjects which will not be expert reviewers.
 
-I will also try to select documents in order to form a collection that does not particularly advantage or disadvantage each reviewer, trying to find documents that correspond to each of my reviewers' subject area.
+I will also try to select documents in order to form a collection that does not particularly advantage or disadvantage each reviewer, trying to find documents that correspond to each of my reviewers' subject area. Furthermore, the files are deemed "sensitive" according to 2 FOI sections:
+
+- international relations (section 27)
+- personal information (Section 40)
+
+Section 27 might be too complex to evaluate, hence, selecting Section 40 documents alone might make it easier for reviewers to identify sensitivities and make the task more representative.
+
+Another point is: should I then only include documents sealed off only because of Section 40 or also include Section 27 sealed documents?
+
+I've written a bash command to filter files accordingly:
+
+```bash
+find . -type f -size +${MIN_SIZE}c -size -${MAX_SIZE}c -name "*.html"  -printf "%f\n" | sed 's/\.html$//1' | grep -f - ./full.collection.path.gold | grep " 1"
+```
 
 ## Order of documents
 
