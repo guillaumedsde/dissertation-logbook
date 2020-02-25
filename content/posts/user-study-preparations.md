@@ -16,6 +16,12 @@ This should allow me to display different user interfaces to different users and
 
 Furthermore I've enabled sensitive explanations to be displayed by default, I am also considering showing only half the maximum explanations by default to see how reviewers modify it (increasing or decreasing it).
 
+{{< figure src="/user-study-preparations/mode_0.png" caption="Test mode 0, original interface" >}}
+
+{{< figure src="/user-study-preparations/mode_1.png" caption="Test mode 1, simplified original interface" >}}
+
+{{< figure src="/user-study-preparations/mode_2.png" caption="Test mode 2, all ML features are disabled" >}}
+
 ## Fixing the classifier
 
 In my previous attempts, I have tried to address the problem of imbalance in my dataset (many more insensitive than sensitive documents) with Stratified K-fold Cross Validation (which only replicates the "same" imbalance over K folds) as well as various [resampling strategies](https://dissertation.guillaume.desusanne.com/posts/one-hot-oversampling-and-evaluation/) which have not yielded good results.
